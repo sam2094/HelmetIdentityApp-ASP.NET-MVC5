@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PROJECT Apollo</title>
+    <link rel="stylesheet" href='/Template/css/style.css'>
+    <link rel="stylesheet" href='/Template/main/style.css'>
+    <style>
+
+        .back-block-green-bottom-right:after {
+            position: absolute;
+            pointer-events: none;
+            display: block;
+            bottom: 2.5em;
+            right: 2em;
+            width: 20%;
+            height: 3em;
+            border: 2px none red;
+            z-index: 20;
+            content: '';
+        }
+
+        .back-block-green-bottom-right:before {
+            position: absolute;
+            pointer-events: none;
+            display: block;
+            bottom: -1.5em;
+            right: 2em;
+            width: 30%;
+            height: 3em;
+            border: 2px none #1ff042;
+            z-index: 20;
+            content: '';
+        }
+
+        .height-95 {
+            min-height: 100vh;
+        }
+
+        .black {
+            background-color: #e7e7e7;
+        }
+
+        img {
+            display: block;
+            width: 50%;
+            height: 50%;
+            margin-left: 23%;
+            margin-right: 25%;
+            padding: 0;
+        }
+
+        .canvas button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe src="audio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="player" autoplay>
+        <source src="Template/audio/maintheme.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="initial-loader" class="padded"><span id="loader-text"></span></div>
+    <div id="main-body">
+        <section id="page-structure" class="ajax">
+            <header class="eliza height-95 black back-block-green-bottom-right">
+                <div id="canvas">
+                    <a href="@Url.Action("Request", "Home")">
+                        <img id="image" src="/Template/images/homepagelogo.png">
+                    </a>
+                </div>
+            </header>
+        </section>
+    </div>
+    <script src='/Template/js/jquery.min.js'></script>
+    <script src='/Template/js/three.min.js'></script>
+    <script src='/Template/plugins/js//CopyShader.js'></script>
+    <script src='/Template/plugins/main/03_glitch.js'></script>
+    <script src='/Template/plugins/js//EffectComposer.js'></script>
+    <script src='/Template/plugins/js//RenderPass.js'></script>
+    <script src='/Template/plugins/js//ShaderPass.js'></script>
+    <script src='/Template/plugins/js//MaskPass.js'></script>
+    <script src='/Template/plugins/main/08_texturepass.js'></script>
+    <script src='/Template/js/html2canvas.min.js'></script>
+    <script src='/Template/js/velocity.min.js'></script>
+    <script src='/Template/plugins/js/GlitchPass.js'></script>
+    <script src='/Template/js/script.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+﻿@using Models.ViewModels
+@model UserViewModelResult
+@{
+	ViewBag.Title = "Request";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Helmet</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.html" />
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/bootstrap/css/bootstrap.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/fonts/font-awesome-4.7.0/css/font-awesome.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/fonts/Linearicons-Free-v1.0.0/icon-font.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/animate/animate.html">
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/css-hamburgers/hamburgers.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/animsition/css/animsition.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/select2/select2.min.html">
+	<link rel="stylesheet" type="text/css" href="/Template/vendor/daterangepicker/daterangepicker.html">
+	<link rel="stylesheet" type="text/css" href="/Template/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/Template/css/main.css">
+</head>
+<style>
+	img {
+		width: 50%;
+		height: 50%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.login100-form-title {
+		font-family: Raleway-Medium;
+		font-size: 30px;
+		color: #555555;
+		line-height: 1.2;
+		text-transform: none;
+		text-align: left;
+		width: 100%;
+		display: block;
+	}
+
+	.txt1 {
+		font-family: Raleway-SemiBold;
+		color: #555555;
+		line-height: 1.2;
+		text-transform: none;
+	}
+</style>
+
+<body>
+	<div class="limiter">
+
+		<div class="container-login100">
+
+			<img src="/Template/images/requestpagelogo.jpg" height="600" width="600">
+
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+				<form class="login100-form validate-form flex-sb flex-w" method="post">
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					<span class="login100-form-title p-b-32">
+						Helmet
+					</span>
+					<span class="txt1 p-b-11">
+						Name
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						@Html.EditorFor(model => model.UserViewModel.Name, new { htmlAttributes = new { @class = "input100", @Name = nameof(Model.UserViewModel.Name) } })
+						<span class="focus-input100"></span>
+						<div class="alert alert-warning" style="height:5px; padding-top:5px; background-color:transparent;border-color:transparent">
+							<h5 style="color:red; margin-top:6px">
+							@Html.ValidationMessage(nameof(Model.UserViewModel.Name))</h5>
+						</div>
+					</div>
+					<span class="txt1 p-b-11">
+						Surname
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						@Html.EditorFor(model => model.UserViewModel.Surname, new { htmlAttributes = new { @class = "input100", @Name = nameof(Model.UserViewModel.Surname) } })
+						<span class="focus-input100"></span>
+						<div class="alert alert-warning" style="height:5px; padding-top:5px; background-color:transparent;border-color:transparent">
+							<h5 style="color:red; margin-top:6px">
+								@Html.ValidationMessage(nameof(Model.UserViewModel.Surname))
+							</h5>
+						</div>
+					</div>
+					<span class="txt1 p-b-11">
+						Phone Number
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						@Html.EditorFor(model => model.UserViewModel.Phone, new { htmlAttributes = new { @class = "input100", @Name = nameof(Model.UserViewModel.Phone) } })
+						<span class="focus-input100"></span>
+						<div class="alert alert-warning" style="height:5px; padding-top:5px; background-color:transparent;border-color:transparent">
+							<h5 style="color:red; margin-top:6px">
+								@Html.ValidationMessage(nameof(Model.UserViewModel.Phone))
+							</h5>
+						</div>
+					</div>
+					<span class="txt1 p-b-11">
+						Email
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						@Html.EditorFor(model => model.UserViewModel.Name, new { htmlAttributes = new { @class = "input100", @Name = nameof(Model.UserViewModel.Email) } })
+						<span class="focus-input100"></span>
+						<div class="alert alert-warning" style="height:5px; padding-top:5px; background-color:transparent;border-color:transparent">
+							<h5 style="color:red; margin-top:6px">
+								@Html.ValidationMessage(nameof(Model.UserViewModel.Email))
+							</h5>
+						</div>
+					</div>
+					<br>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Send me email
+						</button>
+					</div>
+					<div class="alert alert-warning" style="height:5px; padding-top:5px; background-color:transparent;border-color:transparent">
+						<h4 style="color:red; margin-top:6px">@(Model?.Message)</h4>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="dropDownSelect1"></div>
+	<script src="/Template/vendor/jquery/jquery-3.2.1.min.html"></script>
+	<script src="/Template/vendor/animsition/js/animsition.min.html"></script>
+	<script src="/Template/vendor/bootstrap/js/popper.html"></script>
+	<script src="/Template/vendor/bootstrap/js/bootstrap.min.html"></script>
+	<script src="/Template/vendor/select2/select2.min-2.html"></script>
+	<script src="/Template/vendor/daterangepicker/moment.min.html"></script>
+	<script src="/Template/vendor/daterangepicker/daterangepicker-2.html"></script>
+	<script src="/Template/vendor/countdowntime/countdowntime.html"></script>
+	<script src="/Template/js/main.js"></script>
+</body>
+</html>
